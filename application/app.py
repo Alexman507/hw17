@@ -12,10 +12,9 @@ def create_app():
     db.init_app(app)
 
     with app.app_context():
-
         api = Api(app, version='1.0', description='Movies API', prefix='/api')
         app.config['api'] = api
 
-        from application import routes
+        from application import routes  # noqa
 
         return app
